@@ -12,7 +12,6 @@ import { VscJson } from "react-icons/vsc";
 import Home from "./Home";
 import About from "./About";
 import Projects from "./Projects";
-import Contact from "./Contact";
 import Resume from "./Resume";
 const allFiles: fileType[] = [
   {
@@ -128,8 +127,6 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
               <Projects />
             ) : activeFileName.split(".")[0] === "resume" ? (
               <Resume />
-            ) : activeFileName.split(".")[0] === "contact" ? (
-              <Contact />
             ) : (
               // <Projects />
               // ) : activeFileName === "contact.tsx" ? (
