@@ -96,17 +96,17 @@ const techColors: { [key: string]: string } = {
 
 export default function Projects() {
   return (
-    <main className="min-h-screen p-4 md:p-8 text-white">
-      <div className="max-w-6xl mx-auto">
+    <main className="min-h-screen py-4 md:p-8 md:px-4 text-white">
+      <div className="mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">My Projects</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-[#001822] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              className="bg-gray-800 border border-gray-400 text-gray-300 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               <div className="p-6">
-                <h2 className="text-xl font-semibold mb-3">{project.name}</h2>
+                <h2 className="text-xl font-semibold mb-3 text-gray-100">{project.name}</h2>
                 <p className="mb-4 h-24 overflow-y-auto">
                   {project.description}
                 </p>

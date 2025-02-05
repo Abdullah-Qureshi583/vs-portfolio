@@ -19,8 +19,6 @@ const ExplorerSidebar = ({
   setIsExplorerSheet?: any;
 }) => {
   const [sidebarWidth, setSidebarWidth] = useState(220); // Initial width
-  console.log("in the explorer the open files are ", files);
-
   // Function to handle dragging
   const handleMouseDown = (e: React.MouseEvent) => {
     e.preventDefault();

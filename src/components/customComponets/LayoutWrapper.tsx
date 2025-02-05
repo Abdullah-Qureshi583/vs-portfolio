@@ -1,3 +1,5 @@
+// close other
+
 "use client";
 import React, { useEffect, useState } from "react";
 import IconsSidebar from "@/components/customComponets/IconsSidebar";
@@ -13,6 +15,7 @@ import Home from "./Home";
 import About from "./About";
 import Projects from "./Projects";
 import Resume from "./Resume";
+import Github from "./Github";
 const allFiles: fileType[] = [
   {
     name: "home.tsx",
@@ -43,16 +46,13 @@ const allFiles: fileType[] = [
 
 const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
   const [files, setFiles] = useState(allFiles);
-  const [activeFileName, setActiveFileName] = useState("home.tsx");
+  const [activeFileName, setActiveFileName] = useState("github.md");
   const [isExplorerOpen, setIsExplorerOpen] = useState<boolean>(true);
   const [openFiles, setOpenFiles] = useState<fileType[]>([
     {
-      name: "home.tsx",
-      icon: <FaReact className="text-blue-400" />,
-    },
-    {
-      name: "about.html",
-      icon: <FaHtml5 className="text-orange-500" />,
+      name: "github.md",
+
+      icon: <FaMarkdown className="text-blue-300" />,
     },
   ]);
 
@@ -105,7 +105,7 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
         {/* Main content area */}
         <div className="flex-grow flex flex-col">
           {/* Fixed FilesHeader at the top */}
-          <div className="shrink-0">
+          <div className="shrink-0 overflow-x-auto">
             <FilesHeader
               openFiles={openFiles}
               setOpenFiles={setOpenFiles}
@@ -115,7 +115,7 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
           </div>
 
           {/* Scrollable content */}
-          <div className="flex-grow overflow-y-auto  px-4 sm:px-6 lg:px-8 ">
+          <div className="flex-grow overflow-y-auto px-3 sm:px-5  lg:px-8">
             {activeFileName.split(".")[0] === "home" ? (
               <Home
                 setOpenFiles={setOpenFiles}
@@ -127,10 +127,9 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
               <Projects />
             ) : activeFileName.split(".")[0] === "resume" ? (
               <Resume />
+            ) : activeFileName.split(".")[0] === "github" ? (
+              <Github />
             ) : (
-              // <Projects />
-              // ) : activeFileName === "contact.tsx" ? (
-              //   <About />
               ""
             )}
           </div>
