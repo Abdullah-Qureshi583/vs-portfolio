@@ -58,7 +58,7 @@ const FilesHeader = ({
   };
 
   return (
-    <div className="bg-explorerSidebarBgColor w-full flex border-b border-black overflow-x-auto  ">
+    <div className="bg-filesHeaderBgColor w-full flex border-b border-black overflow-x-auto  ">
       {openFiles &&
         openFiles.map((file, idx) => (
           <div onClick={() => setActiveFileName(file.name)} key={idx}>
@@ -67,9 +67,9 @@ const FilesHeader = ({
                 <div
                   className={` ${
                     activeFileName == file.name
-                      ? " border-b border-activeLineColor bg-activeTabColor"
-                      : "border-l border-r border-black "
-                  } flex gap-2 group  cursor-pointer items-center px-4 py-1.5`}
+                      ? " border-b border-activeLineColor bg-activeTabColor  text-activeColor"
+                      : "border border-darkGray bg-headerFileBgColor  border-b-0 text-lightGray"
+                  } flex gap-2 group   cursor-pointer items-center px-4 py-1.5`}
                 >
                   {file.icon}
                   <span className="font-light text-sm">{file.name}</span>
@@ -78,7 +78,7 @@ const FilesHeader = ({
                       activeFileName == file.name
                         ? "opacity-100"
                         : "opacity-0 group-hover:opacity-100"
-                    }  hover:bg-zinc-700  rounded-md`}
+                    }  hover:bg-activeTabColor  rounded-md`}
                     onClick={(e) => handleCloseFile(file, e)}
                   />
                 </div>

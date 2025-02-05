@@ -27,7 +27,7 @@ const ExplorerInnerContent = ({
       style={sidebarWidth ? { width: `${sidebarWidth}px` } : { width: "100%" }}
     >
       {/* Explorer Title (Fixed) */}
-      <h2 className="text-sm tracking-wider ">EXPLORER</h2>
+      <h2 className="text-sm tracking-wider text-subTextColor">EXPLORER</h2>
 
       {/* Portfolio Section */}
       <div className="mt-4">
@@ -64,8 +64,8 @@ const ExplorerInnerContent = ({
                 key={index}
                 className={`flex items-center space-x-2  hover:text-activeColor px-2 cursor-pointer ${
                   activeFileName == file.name
-                    ? "bg-zinc-700 text-activeColor"
-                    : "text-inActiveText"
+                    ? "bg-activeTabColor text-activeColor"
+                    : "text-lightGray"
                 } `}
               >
                 {file.icon}

@@ -16,6 +16,34 @@
 }
 
 :root {
+  /* --borderColor: #787b82;
+  --darkBorderColor: #0c0c0c; */
+
+  --filesHeaderBgColor: #0d1117;
+  --mainContentBgColor: #0d1117;
+  --topHeaderBgColor: #0d1117;
+  --iconsSidebarBgColor: #0d1117;
+  --headerFileBgColor: #0d1117;
+  --explorerSidebarBgColor: #010409;
+
+  --activeLineColor: #f78166;
+  --activeTabColor: #2d3139;
+
+  --activeColor: #fff;
+  --subTextColor: #d4d5d6;
+  --secondaryColor: #96bbdb;
+
+  --lightGray: #797f84;
+  --darkGray: #191d23;
+}
+[data-theme="dark"] {
+  --color-primary: #9b59b6;
+  --color-secondary: #e74c3c;
+  --color-background: #2c3e50;
+  --color-text: #ffffff;
+}
+
+:root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;

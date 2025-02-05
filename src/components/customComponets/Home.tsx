@@ -1,22 +1,11 @@
-// https://sarcastic-geek.netlify.app/
 "use client";
 import React from "react";
 import { ExternalLink } from "lucide-react";
-import Link from "next/link";
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { IoIosMail } from "react-icons/io";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import Typewriter from "typewriter-effect";
-import { FaReact, FaWordpress, FaNodeJs } from "react-icons/fa";
-import {
-  SiJavascript,
-  SiNextdotjs,
-  SiRust,
-  SiTypescript,
-} from "react-icons/si";
+import { FaReact, FaNodeJs } from "react-icons/fa";
+import { SiNextdotjs, SiTypescript } from "react-icons/si";
 import { RiJavascriptFill, RiTailwindCssFill } from "react-icons/ri";
 import { fileType } from "@/types/file";
 
@@ -82,7 +71,7 @@ const Home = ({
   };
   return (
     <>
-      <section id="home" className="flex-grow flex   relative  ">
+      <section id="home" className="flex-grow flex relative  ">
         {/* Main content */}
         <div className="w-full  mx-auto pt-16 relative">
           <div className="flex flex-col gap-y-4  items-start">
@@ -91,7 +80,7 @@ const Home = ({
               <h1 className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl tracking-wide  text-activeColor">
                 Abdullah Qureshi
               </h1>
-              <span className="block mt-2  text-nowrap text-lg xs:text-xl md:text-4xl  font-SpaceGrotesk  tracking-widest ">
+              <span className="block mt-2  text-nowrap text-lg xs:text-xl md:text-4xl  font-SpaceGrotesk  tracking-widest text-subTextColor">
                 <Typewriter
                   options={{
                     strings: ["MERN Stack Developer"],
@@ -99,7 +88,7 @@ const Home = ({
                     loop: true,
                     cursor: "|",
                     cursorClassName:
-                      "text-textYellow font-semibold custom-cursor",
+                      "text-secondaryColor font-semibold custom-cursor",
                     deleteSpeed: 100,
                   }}
                 />
@@ -118,7 +107,7 @@ const Home = ({
             </div>
 
             {/* skills logos */}
-            <div className="flex flex-wrap justify-center gap-12  px-4  py-10 md:px-16 text-center text-textYellow">
+            <div className="flex flex-wrap justify-center gap-12  px-4  py-10 md:px-16 text-center text-secondaryColor">
               {techStack.map((tech, index) => (
                 <div
                   key={index}
@@ -135,7 +124,7 @@ const Home = ({
             <div className="flex flex-wrap gap-4">
               <Button
                 onClick={() => openProjects()}
-                className="bg-inActiveColor/30 text-white hover:bg-transparent group hover:text-textYellow px-6"
+                className="bg-lightGray text-subTextColor hover:bg-darkGray group hover:text-secondaryColor px-6"
               >
                 <span className="group-hover:underline duration-75 transition-all">
                   View Projects
@@ -145,7 +134,7 @@ const Home = ({
 
               <Button
                 variant="outline"
-                className="border-gray-700 text-gray-600 font-semibold bg-zinc-200 hover:text-zinc-200 hover:bg-gray-600"
+                className="border-lightGray bg-darkGray border text-lightGray font-medium  hover:text-darkGray hover:bg-lightGray hover:border-darkGray"
                 onClick={handleDownloadCV}
               >
                 Download Resume

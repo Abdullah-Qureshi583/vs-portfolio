@@ -1,12 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   FaTwitter,
   FaGithub,
-  FaFacebook,
   FaLinkedin,
-  FaTiktok,
   FaEnvelope,
   FaCog,
   FaUser,
@@ -17,6 +15,7 @@ import { Sheet, SheetClose, SheetContent } from "@/components/ui/sheet";
 import ExplorerSidebar from "./ExplorerSidebar";
 import { fileType } from "@/types/file";
 import { RxCross2 } from "react-icons/rx";
+import { IoIosColorPalette } from "react-icons/io";
 
 const IconsSidebar = ({
   isExplorerOpen,
@@ -30,22 +29,40 @@ const IconsSidebar = ({
   setIsExplorerOpen: (isOpen: boolean | ((prev: boolean) => boolean)) => void;
 
   files: fileType[];
-  setOpenFiles: (files: fileType[]) => void;
+  setOpenFiles: (
+    files: fileType[] | ((prev: fileType[]) => fileType[])
+  ) => void;
   setActiveFileName: (fileName: string) => void;
   activeFileName: string;
 }) => {
-  const [hovered, setHovered] = useState<number | null>(null);
-  const [activeId, setActiveId] = useState<number>(1);
+  const [hovered, setHovered] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState<string>("explorer");
   const [isExplorerSheet, setIsExplorerSheet] = useState(false);
 
-  const handleClick = (id: number) => {
-    if (id === 1) {
+  const handleClick = (id: string) => {
+    if (id === "explorer") {
       if (window.innerWidth > 768) {
         setIsExplorerOpen((prev: boolean) => !prev);
       } else {
         setIsExplorerSheet(true);
       }
-      setActiveId(isExplorerOpen ? 0 : 1);
+      setActiveId(isExplorerOpen ? "" : "explorer");
+    } else if (id == "setting") {
+      const themeFile = {
+        name: "theme.mjx",
+        icon: <IoIosColorPalette className="text-teal-500" />,
+      };
+      setOpenFiles((prev: fileType[]) => {
+        if (!prev.some((file) => file.name === themeFile.name)) {
+          return [...prev, themeFile];
+        }
+        return prev;
+      });
+      setActiveFileName(themeFile.name);
+      setActiveId("setting");
+      if (isExplorerOpen) {
+        setIsExplorerOpen(false);
+      }
     } else {
       setActiveId(id);
       if (isExplorerOpen) {
@@ -55,24 +72,33 @@ const IconsSidebar = ({
   };
 
   const icons = [
-    { id: 1, name: "Explorer", icon: <FaRegCopy className="size-6" /> },
     {
-      id: 2,
+      id: "explorer",
+      name: "Explorer",
+      icon: <FaRegCopy className="size-6" />,
+    },
+    {
+      id: "twitter",
       name: "Twitter",
       icon: <FaTwitter className="size-6" />,
       link: "#",
     },
-    { id: 3, name: "GitHub", icon: <FaGithub className="size-6" />, link: "#" },
+    {
+      id: "github",
+      name: "GitHub",
+      icon: <FaGithub className="size-6" />,
+      link: "#",
+    },
 
     {
-      id: 5,
+      id: "linkedin",
       name: "LinkedIn",
       icon: <FaLinkedin className="size-6" />,
       link: "#",
     },
 
     {
-      id: 7,
+      id: "email",
       name: "Email",
       icon: <FaEnvelope className="size-6" />,
       link: "mailto:mabdullahqureshi583+portfolio@gmail.com",
@@ -80,24 +106,34 @@ const IconsSidebar = ({
   ];
 
   const bottomIcons = [
-    { id: 8, name: "Profile", icon: <FaUser className="size-6" />, link: "#" },
-    { id: 9, name: "Settings", icon: <FaCog className="size-6" />, link: "#" },
+    {
+      id: "profile",
+      name: "Profile",
+      icon: <FaUser className="size-6" />,
+      link: "#",
+    },
+    {
+      id: "setting",
+      name: "Settings",
+      icon: <FaCog className="size-6" />,
+      link: "#",
+    },
   ];
 
   const renderIcons = (items: typeof icons) => (
     <div className="flex flex-col items-start gap-y-1">
       {items.map((item) => (
-        <Link key={item.id}  href={item.link || "#"}>
+        <Link key={item.id} href={item.link || "#"}>
           <div
             className={`relative flex items-center justify-center w-14 h-14 rounded-r-sm transition duration-300 cursor-pointer
               ${
                 activeId === item.id
-                  ? "bg-gray-700 border-l-[3px] border-activeLineColor rounded-none rounded-r-sm text-activeColor"
-                  : "text-inActiveColor"
+                  ? "bg-activeTabColor border-l-[3px] border-activeLineColor rounded-none rounded-r-sm text-activeColor"
+                  : "text-lightGray"
               }
               ${
                 hovered === item.id && activeId !== item.id
-                  ? "hover:bg-gray-700 hover:text-activeColor"
+                  ? "hover:bg-activeTabColor hover:text-activeColor"
                   : ""
               }`}
             onMouseEnter={() => setHovered(item.id)}
@@ -124,7 +160,7 @@ const IconsSidebar = ({
         open={isExplorerSheet}
         onOpenChange={(open) => {
           setIsExplorerSheet(open);
-          setActiveId(0);
+          setActiveId("");
         }}
       >
         <SheetContent className=" flex overflow-y-auto p-0 border-black">

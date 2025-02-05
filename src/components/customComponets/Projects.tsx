@@ -102,10 +102,10 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-explorerSidebarBgColor   border border-gray-400 text-subTextColor rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              className="bg-darkGray border border-lightGray text-subTextColor rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               <div className="p-6">
-                <h2 className="text-xl font-semibold mb-3 text-gray-100">
+                <h2 className="text-xl font-semibold mb-3 text-activeColor">
                   {project.name}
                 </h2>
                 <p className="mb-4 h-24 overflow-y-auto">
@@ -116,8 +116,8 @@ export default function Projects() {
                     {project.languages.map((lang, i) => (
                       <span
                         key={i}
-                        className={`px-3 py-1 border rounded-full text-sm ${
-                          techColors[lang] || "border-gray-400"
+                        className={`px-3 py-1 border  rounded-full text-sm ${
+                          techColors[lang] || "border-lightGray"
                         }`}
                       >
                         {lang}
@@ -128,18 +128,18 @@ export default function Projects() {
                 <div className="flex gap-4">
                   <Link
                     href={project.liveDemo}
-                    className="flex items-center gap-2 text-blue-400 hover:text-blue-600 transition-colors"
+                    className="flex items-center gap-2 text-secondaryColor hover:bg-secondaryColor/80 transition-colors group hover:underline "
                     target="_blank"
                   >
-                    <ExternalLink size={18} />
+                    <ExternalLink size={18} className="group-hover:scale-110 duration-75 transition-all" />
                     <span>Live Demo</span>
                   </Link>
                   <Link
                     href={project.github}
-                    className="flex items-center gap-2 text-subTextColor hover:text-gray-100 transition-colors"
+                    className="flex items-center gap-2 text-subTextColor hover:text-activeColor transition-colors group"
                     target="_blank"
                   >
-                    <PiGithubLogo size={18} />
+                    <PiGithubLogo size={18} className="group-hover:scale-110 duration-75 transition-all"/>
                     <span>Code</span>
                   </Link>
                 </div>

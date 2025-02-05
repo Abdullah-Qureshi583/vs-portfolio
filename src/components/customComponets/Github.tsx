@@ -70,8 +70,8 @@ export default function Github() {
   return (
     <main className="min-h-screen md:px-4 py-4">
       {/* Banner Section */}
-      
-      <div className="bg-githubProfileBgColor rounded-md shadow-md ">
+
+      <div className="bg-darkGray rounded-md shadow-md ">
         <div className=" mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center gap-6">
             {/* Profile Image */}
@@ -82,7 +82,7 @@ export default function Github() {
                   alt={"User Profile Image"}
                   width={250}
                   height={250}
-                  className="w-36 h-36 rounded-full border-4 border-gray-700"
+                  className="w-40 h-40 rounded-full "
                 />
               </Skeleton>
             ) : (
@@ -96,25 +96,25 @@ export default function Github() {
                   alt={profile?.name || "User Profile Image"}
                   width={250}
                   height={250}
-                  className="w-36 h-36 rounded-full border-4 border-gray-700"
+                  className="w-36 h-36 rounded-full border-4 border-lightGray"
                 />
               </a>
             )}
 
             {/* Profile Info */}
             <div className="flex-1">
-              <h1 className="text-2xl font-bold">{profile?.name}</h1>
+              <h1 className="text-2xl font-bold text-activeColor">{profile?.name}</h1>
               {profile?.login && (
                 <a
                   href={`https://github.com/${profile?.login}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:underline"
+                  className="text-borderColor hover:underline text-lightGray"
                 >
                   @{profile?.login}
                 </a>
               )}
-              <p className="mt-2 text-subTextColor">{profile?.bio}</p>
+              <p className="mt-2 text-lightGray">{profile?.bio}</p>
 
               {/* Stats */}
               <div className="flex flex-col md:flex-row gap-6 mt-4">
@@ -159,9 +159,9 @@ export default function Github() {
 
       {/* Repositories Section */}
       <div className="mx-auto md:px-4 py-8">
-        <h2 className="text-2xl font-bold mb-6">Repositories</h2>
+        <h2 className="text-2xl font-bold mb-6 text-activeColor">Repositories</h2>
         {loading ? (
-          <p className="text-gray-400">Loading repositories...</p>
+          <p className="text-borderColor">Loading repositories...</p>
         ) : error ? (
           <p className="text-red-500">{error}</p>
         ) : repositories.length > 0 ? (
@@ -176,7 +176,7 @@ export default function Github() {
                     href={repo.html_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xl font-semibold text-blue-400 hover:underline"
+                    className="text-xl font-semibold text-secondaryColor hover:underline"
                   >
                     {repo.name}
                   </a>
@@ -185,17 +185,17 @@ export default function Github() {
                   <div className="flex items-center gap-4 mt-4">
                     {repo.language && (
                       <span className="flex items-center gap-1">
-                        <span className="w-3 h-3 rounded-full bg-yellow-500 "></span>
+                        <span className="w-3 h-3 rounded-full bg-yellow-500  "></span>
                         {repo.language}
                       </span>
                     )}
                     <span className="flex items-center gap-1">
-                      <Star className="w-4 h-4 text-gray-400" />
-                      {repo.stargazers_count}
+                      <Star className="w-4 h-4 text-lightGray" />
+                     <span className="ml-1 text-lightGray"> {repo.stargazers_count}</span>
                     </span>
                     <span className="flex items-center gap-1">
-                      <GitBranch className="w-4 h-4 text-gray-400" />
-                      {repo.forks_count}
+                      <GitBranch className="w-4 h-4 text-lightGray" />
+                     <span className="ml-1 text-lightGray"> {repo.forks_count}</span>
                     </span>
                   </div>
                 </CardContent>
@@ -203,7 +203,7 @@ export default function Github() {
             ))}
           </div>
         ) : (
-          <p className="text-gray-400">No repositories found.</p>
+          <p className="text-borderColor">No repositories found.</p>
         )}
       </div>
     </main>

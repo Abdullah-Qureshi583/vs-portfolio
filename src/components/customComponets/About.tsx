@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const PrimaryHeadig = ({ children }: { children: React.ReactNode }) => {
   return (
-    <h2 className="text-xl xs:text-2xl  font-semibold mb-4 flex items-center">
+    <h2 className="text-xl xs:text-2xl  font-semibold mb-4 flex items-center text-activeColor">
       {children}
     </h2>
   );
@@ -71,23 +71,23 @@ const About = () => {
               alt="Profile Image"
               width={300}
               height={300}
-              className="w-48 h-48 rounded-full -backdrop-hue-rotate-60 object-cover mb-6 md:mb-0 md:mr-8 border-4 border-gray-700"
+              className="w-48 h-48 rounded-full -backdrop-hue-rotate-60 object-cover mb-6 md:mb-0 md:mr-8 border-4 border-darkGray"
             />
             {/* image and name  */}
             <div>
-              <h1 className="text-2xl xs:text-3xl md:text-4xl font-bold text-white mb-2">
+              <h1 className="text-2xl xs:text-3xl md:text-4xl font-bold text-activeColor mb-2">
                 Abdullah Qureshi
               </h1>
-              <p className="  md:text-xl text-inActiveText mb-4">
+              <p className="md:text-xl text-lightGray mb-4">
                 Web Application Developer | Expertise in Next.js, React &
                 JavaScript | Exploring Web 3.0 & Python.
               </p>
 
               <div className="flex space-x-4">
-                <span className="text-blue-400 hover:text-blue-300">
+                <span className="text-secondaryColor ">
                   <Code size={24} />
                 </span>
-                <span className="text-blue-400 hover:text-blue-300">
+                <span className="text-secondaryColor ">
                   <BookOpen size={24} />
                 </span>
               </div>
@@ -114,13 +114,13 @@ const About = () => {
 
             <div>
               <PrimaryHeadig>
-                <Code className="mr-2" /> Skills
+                <Code className="mr-2 text-secondaryColor" /> Skills
               </PrimaryHeadig>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="bg-gray-700 text-subTextColor px-3 py-1 rounded-full text-sm"
+                    className="bg-darkGray text-subTextColor px-3 py-1 rounded-full text-sm"
                   >
                     {skill}
                   </span>
@@ -138,7 +138,7 @@ const About = () => {
           {learningGoals.map((goal, index) => (
             <div
               key={index}
-              className="mb-6 pb-6 border-b border-gray-700 last:border-b-0"
+              className="mb-6 pb-6 border-b border-lightGray last:border-b-0"
             >
               <SecondaryHeadig>{goal.title}</SecondaryHeadig>
               <p className="text-subTextColor mb-2">{goal.description}</p>

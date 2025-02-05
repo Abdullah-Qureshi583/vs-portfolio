@@ -27,18 +27,24 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
-        inActiveText: "#9fa4ad",
-        activeColor: "#fff",
+        // inActiveText: "var(--inActiveText)",
 
-        iconsSidebarBgColor: "#0d1117",
-        explorerSidebarBgColor: "#010409",
-        githubProfileBgColor: "#212529",
-        activeLineColor: "#f78166",
-        activeTabColor: "#2d3139",
-        inActiveColor: "#797f84",
-        subTextColor: "#d4d5d6",
+        mainContentBgColor: "var(--mainContentBgColor)",
+        topHeaderBgColor: "var(--topHeaderBgColor)",
+        filesHeaderBgColor: "var(--filesHeaderBgColor)",
+        iconsSidebarBgColor: "var(--iconsSidebarBgColor)",
+        headerFileBgColor: "var(--headerFileBgColor)",
+        explorerSidebarBgColor: "var(--explorerSidebarBgColor)",
 
-        textYellow: "#edd028",
+        activeLineColor: "var(--activeLineColor)",
+        activeTabColor: "var(--activeTabColor)",
+
+        activeColor: "var(--activeColor)",
+        subTextColor: "var(--subTextColor)",
+        secondaryColor: "var(--secondaryColor)",
+
+        darkGray: "var(--darkGray)",
+        lightGray: "var(--lightGray)",
 
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

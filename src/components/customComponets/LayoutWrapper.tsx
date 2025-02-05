@@ -16,6 +16,8 @@ import About from "./About";
 import Projects from "./Projects";
 import Resume from "./Resume";
 import Github from "./Github";
+
+import ThemeSwitcher from "./ThemeSwitcher";
 const allFiles: fileType[] = [
   {
     name: "home.tsx",
@@ -77,7 +79,7 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <div className="overflow-hidden font-sora  flex flex-col min-h-screen max-h-screen bg-iconsSidebarBgColor text-activeColor">
+    <div className="overflow-hidden font-sora  flex flex-col min-h-screen max-h-screen bg-mainContentBgColor text-activeColor">
       <TopHeader />
       <div className="flex flex-grow w-full h-full overflow-hidden">
         <IconsSidebar
@@ -115,7 +117,7 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
           </div>
 
           {/* Scrollable content */}
-          <div className=" mt-[35px] flex-grow overflow-y-auto px-3 sm:px-5  lg:px-8">
+          <div className=" mt-[50px] flex-grow overflow-y-auto px-3 sm:px-5  lg:px-8">
             {activeFileName.split(".")[0] === "home" ? (
               <Home
                 setOpenFiles={setOpenFiles}
@@ -129,6 +131,8 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
               <Resume />
             ) : activeFileName.split(".")[0] === "github" ? (
               <Github />
+            ) : activeFileName.split(".")[0] === "theme" ? (
+              <ThemeSwitcher />
             ) : (
               ""
             )}
