@@ -27,7 +27,7 @@ async function getGithubProfile(): Promise<UserProfile> {
   const username = "Abdullah-Qureshi583";
   const response = await fetch(`https://api.github.com/users/${username}`, {
     headers: {
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`, // Use environment variable
+      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, // Use environment variable
     },
   });
   return response.json();
@@ -39,7 +39,7 @@ async function getGithubRepos(): Promise<Repository[]> {
     `https://api.github.com/users/${username}/repos`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`, // Use environment variable
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, // Use environment variable
       },
     }
   );
