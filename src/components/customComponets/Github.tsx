@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { GitBranch, Users, BookMarked, Star } from "lucide-react";
 import Image from "next/image";
+import { Skeleton } from "../ui/skeleton";
 
 interface Repository {
   name: string;
@@ -73,13 +74,25 @@ export default function Github() {
         <div className=" mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center gap-6">
             {/* Profile Image */}
-            <Image
-              src={(profile?.avatar_url as string) || "/user-avatar.png"}
-              alt={profile?.name || "User Profile Image"}
-              width={250}
-              height={250}
-              className="w-36 h-36 rounded-full border-4 border-gray-700"
-            />
+            {loading ? (
+              <Skeleton className="rounded-full">
+                <Image
+                  src={"/user-avatar.png"}
+                  alt={"User Profile Image"}
+                  width={250}
+                  height={250}
+                  className="w-36 h-36 rounded-full border-4 border-gray-700"
+                />
+              </Skeleton>
+            ) : (
+              <Image
+                src={(profile?.avatar_url as string) || "/user-avatar.png"}
+                alt={profile?.name || "User Profile Image"}
+                width={250}
+                height={250}
+                className="w-36 h-36 rounded-full border-4 border-gray-700"
+              />
+            )}
 
             {/* Profile Info */}
             <div className="flex-1">
