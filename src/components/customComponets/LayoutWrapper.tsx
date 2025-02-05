@@ -46,13 +46,13 @@ const allFiles: fileType[] = [
 
 const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
   const [files, setFiles] = useState(allFiles);
-  const [activeFileName, setActiveFileName] = useState("github.md");
+  const [activeFileName, setActiveFileName] = useState("home.tsx");
   const [isExplorerOpen, setIsExplorerOpen] = useState<boolean>(true);
   const [openFiles, setOpenFiles] = useState<fileType[]>([
     {
-      name: "github.md",
-
-      icon: <FaMarkdown className="text-blue-300" />,
+      name: "home.tsx",
+  
+      icon: <FaReact className="text-blue-400" />,
     },
   ]);
 

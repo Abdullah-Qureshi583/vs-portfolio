@@ -27,7 +27,7 @@ const ExplorerInnerContent = ({
       style={sidebarWidth ? { width: `${sidebarWidth}px` } : { width: "100%" }}
     >
       {/* Explorer Title (Fixed) */}
-      <h2 className="text-lg font-semibold ">EXPLORER</h2>
+      <h2 className="text-sm tracking-wider ">EXPLORER</h2>
 
       {/* Portfolio Section */}
       <div className="mt-4">

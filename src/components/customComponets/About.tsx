@@ -84,12 +84,12 @@ const About = () => {
               </p>
 
               <div className="flex space-x-4">
-                <a href="#" className="text-blue-400 hover:text-blue-300">
+                <span className="text-blue-400 hover:text-blue-300">
                   <Code size={24} />
-                </a>
-                <a href="#" className="text-blue-400 hover:text-blue-300">
+                </span>
+                <span className="text-blue-400 hover:text-blue-300">
                   <BookOpen size={24} />
-                </a>
+                </span>
               </div>
             </div>
           </div>
@@ -99,7 +99,8 @@ const About = () => {
               <PrimaryHeadig>
                 <User className="mr-2" /> About My Journey
               </PrimaryHeadig>
-              <p className="text-gray-300 text-start mb-4">
+
+              <p className="text-subTextColor text-start mb-4">
                 Driven by a deep passion for technology, I have immersed myself
                 in the world of programming and AI, transforming my curiosity
                 into practical coding skills. My journey is fueled by a
@@ -119,7 +120,7 @@ const About = () => {
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm"
+                    className="bg-gray-700 text-subTextColor px-3 py-1 rounded-full text-sm"
                   >
                     {skill}
                   </span>
@@ -140,7 +141,7 @@ const About = () => {
               className="mb-6 pb-6 border-b border-gray-700 last:border-b-0"
             >
               <SecondaryHeadig>{goal.title}</SecondaryHeadig>
-              <p className="text-gray-300 mb-2">{goal.description}</p>
+              <p className="text-subTextColor mb-2">{goal.description}</p>
             </div>
           ))}
         </div>

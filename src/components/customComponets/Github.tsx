@@ -70,7 +70,8 @@ export default function Github() {
   return (
     <main className="min-h-screen md:px-4 py-4">
       {/* Banner Section */}
-      <div className="bg-gray-700 rounded-md shadow-md ">
+      
+      <div className="bg-githubProfileBgColor rounded-md shadow-md ">
         <div className=" mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center gap-6">
             {/* Profile Image */}
@@ -85,37 +86,71 @@ export default function Github() {
                 />
               </Skeleton>
             ) : (
-              <Image
-                src={(profile?.avatar_url as string) || "/user-avatar.png"}
-                alt={profile?.name || "User Profile Image"}
-                width={250}
-                height={250}
-                className="w-36 h-36 rounded-full border-4 border-gray-700"
-              />
+              <a
+                href={`https://github.com/${profile?.login}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={(profile?.avatar_url as string) || "/user-avatar.png"}
+                  alt={profile?.name || "User Profile Image"}
+                  width={250}
+                  height={250}
+                  className="w-36 h-36 rounded-full border-4 border-gray-700"
+                />
+              </a>
             )}
 
             {/* Profile Info */}
             <div className="flex-1">
               <h1 className="text-2xl font-bold">{profile?.name}</h1>
               {profile?.login && (
-                <p className="text-gray-400">@{profile?.login}</p>
+                <a
+                  href={`https://github.com/${profile?.login}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:underline"
+                >
+                  @{profile?.login}
+                </a>
               )}
-              <p className="mt-2">{profile?.bio}</p>
+              <p className="mt-2 text-subTextColor">{profile?.bio}</p>
 
               {/* Stats */}
               <div className="flex flex-col md:flex-row gap-6 mt-4">
-                <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-gray-400" />
-                  <span>{profile?.followers} followers</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-gray-400" />
-                  <span>{profile?.following} following</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <BookMarked className="w-5 h-5 text-gray-400" />
-                  <span>{profile?.public_repos} repositories</span>
-                </div>
+                <a
+                  href={`https://github.com/${profile?.login}?tab=followers`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Users className="w-5 h-5 text-subTextColor" />
+                  <span className="text-subTextColor">
+                    {profile?.followers} followers
+                  </span>
+                </a>
+                <a
+                  href={`https://github.com/${profile?.login}?tab=following`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Users className="w-5 h-5 text-subTextColor" />
+                  <span className="text-subTextColor">
+                    {profile?.following} following
+                  </span>
+                </a>
+                <a
+                  href={`https://github.com/${profile?.login}?tab=repositories`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <BookMarked className="w-5 h-5 text-subTextColor" />
+                  <span className="text-subTextColor">
+                    {profile?.public_repos} repositories
+                  </span>
+                </a>
               </div>
             </div>
           </div>
@@ -134,9 +169,9 @@ export default function Github() {
             {repositories.map((repo) => (
               <Card
                 key={repo.name}
-                className="hover:shadow-lg transition-shadow bg-gray-800"
+                className="hover:shadow-lg transition-shadow bg-explorerSidebarBgColor"
               >
-                <CardContent className="p-6 text-gray-300">
+                <CardContent className="p-6 text-subTextColor">
                   <a
                     href={repo.html_url}
                     target="_blank"
@@ -145,7 +180,7 @@ export default function Github() {
                   >
                     {repo.name}
                   </a>
-                  <p className="text-gray-400 mt-2">{repo.description}</p>
+                  <p className="text-subTextColor mt-2">{repo.description}</p>
 
                   <div className="flex items-center gap-4 mt-4">
                     {repo.language && (

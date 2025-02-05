@@ -1,12 +1,13 @@
 import Link from "next/link";
-import { Github, ExternalLink } from "lucide-react";
+import { PiGithubLogo } from "react-icons/pi";
+import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
     name: "E-commerce Website",
     description:
       "A fully functional e-commerce platform featuring Admin dashboard, product filtering, add-to-cart, checkout, and Stripe payment integration, built with Next.js and Sanity.",
-    languages: ["Next.js", "Sanity", "Tailwind CSS", "Stripe","TypeScript" ],
+    languages: ["Next.js", "Sanity", "Tailwind CSS", "Stripe", "TypeScript"],
     liveDemo: "https://hekto-marketplace-builder.vercel.app/",
     github:
       "https://github.com/Abdullah-Qureshi583/marketplace-builder-hackathon-2025",
@@ -15,10 +16,9 @@ const projects = [
     name: "SnapPin (URL Shortener)",
     description:
       "A full-stack URL shortener application with custom short URLs, detailed click analytics, and secure authentication using NextAuth.",
-    languages: ["Next.js", "Tailwind CSS", "NextAuth", ],
+    languages: ["Next.js", "Tailwind CSS", "NextAuth"],
     liveDemo: "https://snappin.vercel.app/",
-    github:
-      "https://github.com/Abdullah-Qureshi583/Projects/tree/main/NextJsBasedProjects/snapPin",
+    github: "https://github.com/Abdullah-Qureshi583/URL-Shortener-using-Nextjs",
   },
   {
     name: "Password Manager",
@@ -27,16 +27,15 @@ const projects = [
     languages: ["Next.js", "Node.js", "MongoDB", "ReactHookForm"],
     liveDemo: "https://fortilock.vercel.app/",
     github:
-      "https://github.com/Abdullah-Qureshi583/Projects/tree/main/NextJsBasedProjects/password-manager",
+      "https://github.com/Abdullah-Qureshi583/Password-Manager-using-Nextjs",
   },
   {
     name: "To-Do List App",
     description:
       "A task management application that allows users to add, edit, and delete tasks, with features for marking tasks as completed and filtering by status.",
-    languages: ["React",],
+    languages: ["React"],
     liveDemo: "https://aq-todolist.vercel.app/",
-    github:
-      "https://github.com/Abdullah-Qureshi583/Projects/tree/main/Graphical%20Project/TodoList-using-react-tailwind",
+    github: "https://github.com/Abdullah-Qureshi583/Todo-List-react",
   },
   {
     name: "Currency Converter",
@@ -45,7 +44,7 @@ const projects = [
     languages: ["HTML", "CSS", "JavaScript"],
     liveDemo: "https://aq-currency-convertor.vercel.app/",
     github:
-      "https://github.com/Abdullah-Qureshi583/Projects/tree/main/Graphical%20Project/currency-convertor",
+      "https://github.com/Abdullah-Qureshi583/Currency-Convertor-html-css-ts",
   },
   {
     name: "Tic-Tac-Toe Game",
@@ -54,7 +53,7 @@ const projects = [
     languages: ["HTML", "CSS", "JavaScript"],
     liveDemo: "https://aq-tic-tac-toe.netlify.app/",
     github:
-      "https://github.com/Abdullah-Qureshi583/Projects/tree/main/Graphical%20Project/tic-tac-toe-game",
+      "https://github.com/Abdullah-Qureshi583/Tic-Tac-Toe-using-html-css-ts",
   },
   {
     name: "Resume Builder App",
@@ -80,7 +79,7 @@ const techColors: { [key: string]: string } = {
   Sanity: "border-yellow-500",
   "Tailwind CSS": "border-blue-500",
   Stripe: "border-purple-600",
-  ReactHookForm:"border-teal-500",
+  ReactHookForm: "border-teal-500",
   React: "border-sky-500",
   UUID: "border-orange-500",
   LocalStorage: "border-teal-500",
@@ -96,22 +95,24 @@ const techColors: { [key: string]: string } = {
 
 export default function Projects() {
   return (
-    <main className="min-h-screen py-4 md:p-8 md:px-4 text-white">
+    <main className="min-h-screen py-4 md:p-8 md:px-4 text-activeColor">
       <div className="mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">My Projects</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-gray-800 border border-gray-400 text-gray-300 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              className="bg-explorerSidebarBgColor   border border-gray-400 text-subTextColor rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               <div className="p-6">
-                <h2 className="text-xl font-semibold mb-3 text-gray-100">{project.name}</h2>
+                <h2 className="text-xl font-semibold mb-3 text-gray-100">
+                  {project.name}
+                </h2>
                 <p className="mb-4 h-24 overflow-y-auto">
                   {project.description}
                 </p>
                 <div className="mb-4">
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 text-subTextColor">
                     {project.languages.map((lang, i) => (
                       <span
                         key={i}
@@ -135,10 +136,10 @@ export default function Projects() {
                   </Link>
                   <Link
                     href={project.github}
-                    className="flex items-center gap-2 text-gray-300 hover:text-gray-100 transition-colors"
+                    className="flex items-center gap-2 text-subTextColor hover:text-gray-100 transition-colors"
                     target="_blank"
                   >
-                    <Github size={18} />
+                    <PiGithubLogo size={18} />
                     <span>Code</span>
                   </Link>
                 </div>

@@ -58,7 +58,7 @@ const FilesHeader = ({
   };
 
   return (
-    <div className="bg-iconsSidebarBgColor w-full flex border-b border-black overflow-x-auto  ">
+    <div className="bg-explorerSidebarBgColor w-full flex border-b border-black overflow-x-auto  ">
       {openFiles &&
         openFiles.map((file, idx) => (
           <div onClick={() => setActiveFileName(file.name)} key={idx}>
@@ -67,7 +67,7 @@ const FilesHeader = ({
                 <div
                   className={` ${
                     activeFileName == file.name
-                      ? " border-b border-yellow-500 bg-zinc-700"
+                      ? " border-b border-activeLineColor bg-activeTabColor"
                       : "border-l border-r border-black "
                   } flex gap-2 group  cursor-pointer items-center px-4 py-1.5`}
                 >
@@ -91,7 +91,9 @@ const FilesHeader = ({
                 <ContextMenuItem onClick={() => handleCloseAllFiles()}>
                   Close All
                 </ContextMenuItem>
-                <ContextMenuItem onClick={(e) => handleCloseOtherFiles(file, e)}>
+                <ContextMenuItem
+                  onClick={(e) => handleCloseOtherFiles(file, e)}
+                >
                   Close Other
                 </ContextMenuItem>
               </ContextMenuContent>

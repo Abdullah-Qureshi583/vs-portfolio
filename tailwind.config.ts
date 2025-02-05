@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        xs: "330px", 
+        xs: "330px",
       },
       fontFamily: {
         sora: ['"Sora"', "sans-serif"], // Default sans
@@ -27,16 +27,17 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
-        activeColor: "#fff",
         inActiveText: "#9fa4ad",
-        inActiveColor: "#6b6f77",
+        activeColor: "#fff",
 
-        topHeaderBgColor: "#1f2428",
-        iconsSidebarBgColor: "#24292d",
-        explorerSidebarBgColor: "#242921",
-        activeLineColor: "#43a3dc",
+        iconsSidebarBgColor: "#0d1117",
+        explorerSidebarBgColor: "#010409",
+        githubProfileBgColor: "#212529",
+        activeLineColor: "#f78166",
+        activeTabColor: "#2d3139",
+        inActiveColor: "#797f84",
+        subTextColor: "#d4d5d6",
 
-        activeTabColor: "",
         textYellow: "#edd028",
 
         background: "hsl(var(--background))",

@@ -31,7 +31,7 @@
 //             <p>
 //               <a
 //                 href="https://aq--portfolio.vercel.app/"
-//                 className="hover:text-gray-300 hover:underline"
+//                 className="hover:text-subTextColor hover:underline"
 //               >
 //                 https://aq--portfolio.vercel.app/
 //               </a>
@@ -64,7 +64,7 @@
 //                 <SecondaryHeading>
 //                   D. J. Sindh Government Science College
 //                 </SecondaryHeading>
-//                 <p className="text-sm text-gray-300">
+//                 <p className="text-sm text-subTextColor">
 //                   Intermediate Computer Science
 //                 </p>
 //                 <p className="text-sm text-gray-400">2024 - 2026</p>
@@ -73,7 +73,7 @@
 //                 <SecondaryHeading>
 //                   Pakistan NATIONAL ACADEMY, Karachi.
 //                 </SecondaryHeading>
-//                 <p className="text-sm text-gray-300">
+//                 <p className="text-sm text-subTextColor">
 //                   Matric from Computer Science (84%)
 //                 </p>
 //                 <p className="text-sm text-gray-400">2022 - 2024</p>
@@ -89,12 +89,12 @@
 //                 <SecondaryHeading>
 //                   CERTIFIED IN CLOUD GENAI, WEB3, AND METAVERSE
 //                 </SecondaryHeading>
-//                 <p className="text-sm text-gray-300">Governor House</p>
+//                 <p className="text-sm text-subTextColor">Governor House</p>
 //                 <p className="text-sm text-gray-400">2024 - 2026</p>
 //               </div>
 //               <div>
 //                 <SecondaryHeading>PYTHON PROGRAMMING</SecondaryHeading>
-//                 <p className="text-sm text-gray-300">NED University</p>
+//                 <p className="text-sm text-subTextColor">NED University</p>
 //                 <p className="text-sm text-gray-400">1/2025 - 3/2025</p>
 //               </div>
 //             </div>
@@ -111,7 +111,7 @@
 //                 <a
 //                   target="_blank"
 //                   href="https://deku-marketplace-builder.vercel.app"
-//                   className="text-sm hover:text-gray-300"
+//                   className="text-sm hover:text-subTextColor"
 //                 >
 //                   https://hekto-marketplace-builder.vercel.app
 //                 </a>
@@ -128,7 +128,7 @@
 //                 <a
 //                   target="_blank"
 //                   href="https://mega-shortener.vercel.app"
-//                   className="text-sm hover:text-gray-300"
+//                   className="text-sm hover:text-subTextColor"
 //                 >
 //                   https://snappin.vercel.app/
 //                 </a>
@@ -249,7 +249,7 @@ const skillsData: string[] = [
 
 const Resume: React.FC = () => {
   return (
-    <div className="mx-auto p-3 md:p-8 text-gray-200">
+    <div className="mx-auto p-3 md:p-8 text-subTextColor rounded-md ">
       {/* Header Section */}
       <header className="border-b border-gray-700 pb-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -269,7 +269,7 @@ const Resume: React.FC = () => {
             <p>
               <a
                 href="https://aq--portfolio.vercel.app/"
-                className="hover:text-gray-300 hover:underline"
+                className="hover:text-subTextColor hover:underline"
               >
                 https://aq--portfolio.vercel.app/
               </a>
@@ -281,7 +281,7 @@ const Resume: React.FC = () => {
       {/* About Me Section */}
       <section className="mt-6">
         <PrimaryHeading>ABOUT ME</PrimaryHeading>
-        <p className="text-sm leading-relaxed text-gray-400">
+        <p className="text-sm leading-relaxed text-subTextColor">
           Aspiring full-stack web developer specializing in Next.js, React, and
           modern web technologies. Skilled in JavaScript, TypeScript, and
           Tailwind CSS, with a strong passion for Generative AI, Web 3.0, and
@@ -301,7 +301,7 @@ const Resume: React.FC = () => {
               {educationData.map((item, index) => (
                 <div key={index}>
                   <SecondaryHeading>{item.institution}</SecondaryHeading>
-                  <p className="text-sm text-gray-300">{item.degree}</p>
+                  <p className="text-sm text-subTextColor">{item.degree}</p>
                   <p className="text-sm text-gray-400">{item.duration}</p>
                 </div>
               ))}
@@ -315,7 +315,9 @@ const Resume: React.FC = () => {
               {coursesData.map((item, index) => (
                 <div key={index}>
                   <SecondaryHeading>{item.title}</SecondaryHeading>
-                  <p className="text-sm text-gray-300">{item.institution}</p>
+                  <p className="text-sm text-subTextColor">
+                    {item.institution}
+                  </p>
                   <p className="text-sm text-gray-400">{item.duration}</p>
                 </div>
               ))}
@@ -334,7 +336,7 @@ const Resume: React.FC = () => {
                   <a
                     target="_blank"
                     href={item.link}
-                    className="text-sm hover:text-gray-300"
+                    className="text-sm hover:text-subTextColor"
                   >
                     {item.link}
                   </a>
@@ -349,7 +351,7 @@ const Resume: React.FC = () => {
           {/* Skills */}
           <section>
             <PrimaryHeading>Skills</PrimaryHeading>
-            <ul className="text-sm gap-y-2 items-center text-gray-300 flex gap-3 flex-wrap">
+            <ul className="text-sm gap-y-2 items-center text-subTextColor flex gap-3 flex-wrap">
               {skillsData.map((skill, index) => (
                 <li key={index}>{skill}</li>
               ))}
