@@ -24,6 +24,7 @@ const FilesHeader = ({
   const handleCloseAllFiles = () => {
     setOpenFiles([]);
   };
+
   const handleCloseFile = (file: fileType, event?: React.MouseEvent) => {
     if (event) {
       event.stopPropagation(); // Prevent clicking on the file when closing from the menu
@@ -41,8 +42,23 @@ const FilesHeader = ({
     });
   };
 
+  const handleCloseOtherFiles = (file: fileType, event?: React.MouseEvent) => {
+    if (event) {
+      event.stopPropagation(); // Prevent clicking on the file when closing from the menu
+    }
+
+    setOpenFiles((prevOpenFiles: fileType[]) => {
+      const updatedOpenFiles = [file]; // Keep only the file that is open
+
+      // Update active file name after state is updated
+      setActiveFileName(updatedOpenFiles.at(0)?.name || "");
+
+      return updatedOpenFiles;
+    });
+  };
+
   return (
-    <div className="bg-iconsSidebarBgColor w-full flex border-b border-explorerSidebarBgColor  overflow-x-auto ">
+    <div className="bg-iconsSidebarBgColor w-full flex border-b border-black overflow-x-auto  ">
       {openFiles &&
         openFiles.map((file, idx) => (
           <div onClick={() => setActiveFileName(file.name)} key={idx}>
@@ -59,7 +75,9 @@ const FilesHeader = ({
                   <span className="font-light text-sm">{file.name}</span>
                   <RxCross2
                     className={` ${
-                      activeFileName == file.name ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                      activeFileName == file.name
+                        ? "opacity-100"
+                        : "opacity-0 group-hover:opacity-100"
                     }  hover:bg-zinc-700  rounded-md`}
                     onClick={(e) => handleCloseFile(file, e)}
                   />
@@ -73,7 +91,9 @@ const FilesHeader = ({
                 <ContextMenuItem onClick={() => handleCloseAllFiles()}>
                   Close All
                 </ContextMenuItem>
-                <ContextMenuItem>Close Other</ContextMenuItem>
+                <ContextMenuItem onClick={(e) => handleCloseOtherFiles(file, e)}>
+                  Close Other
+                </ContextMenuItem>
               </ContextMenuContent>
             </ContextMenu>
           </div>
