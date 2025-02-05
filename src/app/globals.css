@@ -33,8 +33,8 @@
 
 /* Thin scrollbar */
 ::-webkit-scrollbar {
-  width: 8px; /* Adjust the width as needed */
-  height: 8px; /* Adjust the height for horizontal scrollbars */
+  width: 4px; /* Adjust the width as needed */
+  height: 4px; /* Adjust the height for horizontal scrollbars */
 }
 
 /* Track */

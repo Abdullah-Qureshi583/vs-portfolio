@@ -75,7 +75,7 @@ export default function Github() {
           <div className="flex flex-col md:flex-row items-center gap-6">
             {/* Profile Image */}
             {loading ? (
-              <Skeleton className="rounded-full">
+              <Skeleton className="rounded-full ">
                 <Image
                   src={"/user-avatar.png"}
                   alt={"User Profile Image"}

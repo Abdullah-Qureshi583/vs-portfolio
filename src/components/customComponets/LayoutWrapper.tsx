@@ -103,9 +103,9 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
         )}
 
         {/* Main content area */}
-        <div className="flex-grow flex flex-col">
+        <div className="flex-grow flex flex-col  relative">
           {/* Fixed FilesHeader at the top */}
-          <div className="shrink-0 overflow-x-auto">
+          <div className="shrink-0 h-[35px] absolute top-0 w-full">
             <FilesHeader
               openFiles={openFiles}
               setOpenFiles={setOpenFiles}
@@ -115,7 +115,7 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
           </div>
 
           {/* Scrollable content */}
-          <div className="flex-grow overflow-y-auto px-3 sm:px-5  lg:px-8">
+          <div className=" mt-[35px] flex-grow overflow-y-auto px-3 sm:px-5  lg:px-8">
             {activeFileName.split(".")[0] === "home" ? (
               <Home
                 setOpenFiles={setOpenFiles}
