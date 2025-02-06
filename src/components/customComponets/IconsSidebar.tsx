@@ -121,19 +121,19 @@ const IconsSidebar = ({
   ];
 
   const renderIcons = (items: typeof icons) => (
-    <div className="flex flex-col items-start gap-y-1">
+    <div className="flex flex-col items-start gap-y-1 max-w-[100vh]  ">
       {items.map((item) => (
         <Link key={item.id} href={item.link || "#"}>
           <div
             className={`relative flex items-center justify-center w-14 h-14 rounded-r-sm transition duration-300 cursor-pointer
               ${
                 activeId === item.id
-                  ? "bg-activeTabColor border-l-[3px] border-activeLineColor rounded-none rounded-r-sm text-activeColor"
+                  ? "bg-activeTabColor border-l-[3px] border-activeLineColor rounded-none rounded-r-sm text-subTextColor"
                   : "text-lightGray"
               }
               ${
                 hovered === item.id && activeId !== item.id
-                  ? "hover:bg-activeTabColor hover:text-activeColor"
+                  ? "hover:bg-activeTabColor hover:text-subTextColor"
                   : ""
               }`}
             onMouseEnter={() => setHovered(item.id)}
@@ -144,7 +144,7 @@ const IconsSidebar = ({
           >
             {item.icon}
             {hovered === item.id && (
-              <span className="hidden md:block absolute left-14 px-2 py-1 bg-gray-800 z-50 text-activeColor text-sm rounded-md shadow-lg whitespace-nowrap">
+              <span className="hidden md:block fixed left-14 px-2 py-1 bg-iconsSidebarBgColor z-50 text-subTextColor text-sm rounded-md shadow-lg whitespace-nowrap">
                 {item.name}
               </span>
             )}
@@ -155,7 +155,7 @@ const IconsSidebar = ({
   );
 
   return (
-    <div className="  w-16 bg-iconsSidebarBgColor flex flex-col justify-between py-1 pb-4  ">
+    <div className=" bg-iconsSidebarBgColor flex flex-col justify-between py-1 pb-4 md:overflow-y- ">
       <Sheet
         open={isExplorerSheet}
         onOpenChange={(open) => {
@@ -163,8 +163,8 @@ const IconsSidebar = ({
           setActiveId("");
         }}
       >
-        <SheetContent className=" flex overflow-y-auto p-0 border-black">
-          <SheetClose className="absolute z-10 right-4 top-4 text-white hover:text-gray-300">
+        <SheetContent className=" flex overflow-y-auto p-0 border-darkGray">
+          <SheetClose className="absolute z-10 right-4 top-4 text-subTextColor">
             <RxCross2 className="h-6 w-6" />
           </SheetClose>
           <ExplorerSidebar

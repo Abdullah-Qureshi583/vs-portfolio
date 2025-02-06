@@ -67,7 +67,7 @@ const FilesHeader = ({
                 <div
                   className={` ${
                     activeFileName == file.name
-                      ? " border-b border-activeLineColor bg-activeTabColor  text-activeColor"
+                      ? " border-b border-activeLineColor bg-activeTabColor  text-subTextColor"
                       : "border border-darkGray bg-headerFileBgColor  border-b-0 text-lightGray"
                   } flex gap-2 group   cursor-pointer items-center px-4 py-1.5`}
                 >
@@ -84,14 +84,21 @@ const FilesHeader = ({
                 </div>
               </ContextMenuTrigger>
               {/* show the option on right click */}
-              <ContextMenuContent>
-                <ContextMenuItem onClick={(e) => handleCloseFile(file, e)}>
+              <ContextMenuContent className="bg-iconsSidebarBgColor text-subTextColor border-lightGray">
+                <ContextMenuItem
+                  className="focus:bg-subTextColor focus:text-iconsSidebarBgColor"
+                  onClick={(e) => handleCloseFile(file, e)}
+                >
                   Close
                 </ContextMenuItem>
-                <ContextMenuItem onClick={() => handleCloseAllFiles()}>
+                <ContextMenuItem
+                  className="focus:bg-subTextColor focus:text-iconsSidebarBgColor"
+                  onClick={() => handleCloseAllFiles()}
+                >
                   Close All
                 </ContextMenuItem>
                 <ContextMenuItem
+                  className="focus:bg-subTextColor focus:text-iconsSidebarBgColor"
                   onClick={(e) => handleCloseOtherFiles(file, e)}
                 >
                   Close Other

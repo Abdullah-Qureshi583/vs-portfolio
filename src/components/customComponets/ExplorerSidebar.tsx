@@ -69,7 +69,7 @@ const ExplorerSidebar = ({
       {/* Drag Handle */}
       {isDesktopView && (
         <div
-          className="w-1 bg-gray-700 hover:bg-gray-500 cursor-ew-resize"
+          className="w-1 bg-darkGray hover:bg-lightGray cursor-ew-resize"
           onMouseDown={handleMouseDown}
         />
       )}

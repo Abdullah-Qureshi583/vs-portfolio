@@ -134,7 +134,7 @@ const Home = ({
 
               <Button
                 variant="outline"
-                className="border-lightGray bg-darkGray border text-lightGray font-medium  hover:text-darkGray hover:bg-lightGray hover:border-darkGray"
+                className="border-lightGray bg-darkGray border text-activeColor font-medium  hover:text-darkGray hover:bg-activeColor hover:border-darkGray"
                 onClick={handleDownloadCV}
               >
                 Download Resume

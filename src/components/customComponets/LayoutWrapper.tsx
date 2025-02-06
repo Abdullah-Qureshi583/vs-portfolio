@@ -53,7 +53,7 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
   const [openFiles, setOpenFiles] = useState<fileType[]>([
     {
       name: "home.tsx",
-  
+
       icon: <FaReact className="text-blue-400" />,
     },
   ]);

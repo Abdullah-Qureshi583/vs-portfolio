@@ -39,11 +39,11 @@ const ExplorerInnerContent = ({
           {isPortfolioOpen ? (
             <FaChevronDown className="text-activeColor duration-300 transition-all" />
           ) : (
-            <FaChevronRight className="text-inActiveText duration-300 transition-all" />
+            <FaChevronRight className="text-lightGray duration-300 transition-all" />
           )}
           <h3
             className={`text-sm font-bold ${
-              isPortfolioOpen ? "text-activeColor" : "text-inActiveText"
+              isPortfolioOpen ? "text-activeColor" : "text-lightGray"
             }`}
           >
             PORTFOLIO
@@ -52,7 +52,7 @@ const ExplorerInnerContent = ({
 
         {/* Portfolio Files (Dropdown) */}
         {isPortfolioOpen && (
-          <div className="mt-2 space-y-2">
+          <div className="mt-2 space-y-2 ">
             {files.map((file, index) => (
               <div
                 onClick={() => {

@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { GitBranch, Users, BookMarked, Star } from "lucide-react";
 import Image from "next/image";
 import { Skeleton } from "../ui/skeleton";
+import { IoMdPerson } from "react-icons/io";
 
 interface Repository {
   name: string;
@@ -27,7 +28,7 @@ async function getGithubProfile(): Promise<UserProfile> {
   const username = "Abdullah-Qureshi583";
   const response = await fetch(`https://api.github.com/users/${username}`, {
     headers: {
-      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, // Use environment variable
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`, // Use environment variable
     },
   });
   return response.json();
@@ -39,7 +40,7 @@ async function getGithubRepos(): Promise<Repository[]> {
     `https://api.github.com/users/${username}/repos`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, // Use environment variable
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`, // Use environment variable
       },
     }
   );
@@ -75,15 +76,9 @@ export default function Github() {
         <div className=" mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center gap-6">
             {/* Profile Image */}
-            {loading ? (
+            {loading || !profile ? (
               <Skeleton className="rounded-full ">
-                <Image
-                  src={"/user-avatar.png"}
-                  alt={"User Profile Image"}
-                  width={250}
-                  height={250}
-                  className="w-40 h-40 rounded-full "
-                />
+                <IoMdPerson className="w-32 h-32 rounded-full text-darkGray bg-lightGray p-3" />
               </Skeleton>
             ) : (
               <a
@@ -96,14 +91,18 @@ export default function Github() {
                   alt={profile?.name || "User Profile Image"}
                   width={250}
                   height={250}
-                  className="w-36 h-36 rounded-full border-4 border-lightGray"
+                  className={`w-36 h-36 rounded-full ${
+                    profile?.avatar_url && "border-4"
+                  } border-lightGray`}
                 />
               </a>
             )}
 
             {/* Profile Info */}
             <div className="flex-1">
-              <h1 className="text-2xl font-bold text-activeColor">{profile?.name}</h1>
+              <h1 className="text-2xl font-bold text-activeColor">
+                {profile?.name}
+              </h1>
               {profile?.login && (
                 <a
                   href={`https://github.com/${profile?.login}`}
@@ -159,7 +158,9 @@ export default function Github() {
 
       {/* Repositories Section */}
       <div className="mx-auto md:px-4 py-8">
-        <h2 className="text-2xl font-bold mb-6 text-activeColor">Repositories</h2>
+        <h2 className="text-2xl font-bold mb-6 text-activeColor">
+          Repositories
+        </h2>
         {loading ? (
           <p className="text-borderColor">Loading repositories...</p>
         ) : error ? (
@@ -191,11 +192,17 @@ export default function Github() {
                     )}
                     <span className="flex items-center gap-1">
                       <Star className="w-4 h-4 text-lightGray" />
-                     <span className="ml-1 text-lightGray"> {repo.stargazers_count}</span>
+                      <span className="ml-1 text-lightGray">
+                        {" "}
+                        {repo.stargazers_count}
+                      </span>
                     </span>
                     <span className="flex items-center gap-1">
                       <GitBranch className="w-4 h-4 text-lightGray" />
-                     <span className="ml-1 text-lightGray"> {repo.forks_count}</span>
+                      <span className="ml-1 text-lightGray">
+                        {" "}
+                        {repo.forks_count}
+                      </span>
                     </span>
                   </div>
                 </CardContent>

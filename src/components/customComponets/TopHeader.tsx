@@ -15,7 +15,7 @@ const TopHeader = () => {
           </div>
         </div>
         <div className="md:hidden h-7 w-5 "></div>
-        <div className="w-96 hidden md:flex text-center h-6 bg-darkGray  border-lightGray rounded-sm text-sm text-inActiveText  gap-2 justify-center items-center">
+        <div className="w-96 hidden md:flex text-center h-6 bg-darkGray  border-lightGray rounded-sm text-sm text-subTextColor  gap-2 justify-center items-center">
           <FaSearch className="rotate-90" />
           Abdullah Qureshi - Visual Studio Code
         </div>

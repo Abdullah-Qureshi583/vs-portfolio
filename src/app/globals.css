@@ -61,24 +61,24 @@
 
 /* Thin scrollbar */
 ::-webkit-scrollbar {
-  width: 4px; /* Adjust the width as needed */
-  height: 4tpx; /* Adjust the height for horizontal scrollbars */
+  width: 3px; /* Adjust the width as needed */
+  height: 3px; /* Adjust the height for horizontal scrollbars */
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #202020; /* Color of the track */
+  background: var(--darkGray); /* Color of the track */
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #171414; /* Color of the scrollbar handle */
-  border-radius: 4px; /* Rounded corners */
+  background: var(--lightGray); /* Color of the scrollbar handle */
+  border-radius: 6px; /* Rounded corners */
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #080808; /* Color of the scrollbar handle on hover */
+  background: var(--lightGray); /* Color of the scrollbar handle on hover */
 }
 
 @layer utilities {

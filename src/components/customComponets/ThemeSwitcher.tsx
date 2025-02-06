@@ -55,19 +55,19 @@ const themes: Record<ThemeName, ThemeColors> = {
     darkGray: "#191d23",
   },
   "Solarized Light": {
-    filesHeaderBgColor: "#fdf6e3",
-    mainContentBgColor: "#ffffff",
-    topHeaderBgColor: "#f6f8fa",
-    iconsSidebarBgColor: "#f6f8fa",
+    filesHeaderBgColor: "#d9d2c2",
+    mainContentBgColor: "#fdf6e3",
+    topHeaderBgColor: "#eee8d5",
+    iconsSidebarBgColor: "#ddd6c1",
     headerFileBgColor: "#fdf6e3",
-    explorerSidebarBgColor: "#ffffff",
-    activeLineColor: "#0969da",
-    activeTabColor: "#ffffff",
-    activeColor: "#24292f",
-    subTextColor: "#24292f",
+    explorerSidebarBgColor: "#eee8d5",
+    activeLineColor: "#584c27",
+    activeTabColor: "#d1cbb8",
+    activeColor: "#616161",
+    subTextColor: "#584c27",
     secondaryColor: "#b58900",
-    lightGray: "#eee8d5",
-    darkGray: "#073642",
+    lightGray: "#aea894",
+    darkGray: "#d9d2c2",
   },
   Cobalt2: {
     filesHeaderBgColor: "#193549",
@@ -115,19 +115,19 @@ const themes: Record<ThemeName, ThemeColors> = {
     darkGray: "#073642",
   },
   "Night Owl": {
-    filesHeaderBgColor: "#3b4252",
-    mainContentBgColor: "#581c87",
-    topHeaderBgColor: "#6b21a8",
-    iconsSidebarBgColor: "#6b21a8",
-    headerFileBgColor: "#3b4252",
-    explorerSidebarBgColor: "#581c87",
-    activeLineColor: "#d946ef",
-    activeTabColor: "#9333ea",
-    activeColor: "#a855f7",
-    subTextColor: "#c084fc",
-    secondaryColor: "#88c0d0",
-    lightGray: "#5e81ac",
-    darkGray: "#4c566a",
+    filesHeaderBgColor: "#011627",
+    mainContentBgColor: "#011627",
+    topHeaderBgColor: "#011627",
+    iconsSidebarBgColor: "#011627",
+    headerFileBgColor: "#01111d",
+    explorerSidebarBgColor: "#011627",
+    activeLineColor: "#5f7e97",
+    activeTabColor: "#0b2942",
+    activeColor: "#99afd8",
+    subTextColor: "#8cb3e7",
+    secondaryColor: "#cad4e7",
+    lightGray: "#6681a3",
+    darkGray: "#031d44",
   },
 };
 
@@ -191,16 +191,9 @@ const ThemeSwitcher: React.FC = () => {
       "--secondaryColor",
       theme.secondaryColor
     );
-    document.documentElement.style.setProperty(
-      "--lightGray",
-      theme.lightGray
-    );
-    document.documentElement.style.setProperty(
-      "--darkGray",
-      theme.darkGray
-    );
+    document.documentElement.style.setProperty("--lightGray", theme.lightGray);
+    document.documentElement.style.setProperty("--darkGray", theme.darkGray);
   };
-  
 
   return (
     <div>
