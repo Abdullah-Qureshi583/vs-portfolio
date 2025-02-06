@@ -81,20 +81,20 @@ const IconsSidebar = ({
       id: "twitter",
       name: "Twitter",
       icon: <FaTwitter className="size-6" />,
-      link: "#",
+      link: "https://x.com/AbdullahQu37820",
     },
     {
       id: "github",
       name: "GitHub",
       icon: <FaGithub className="size-6" />,
-      link: "#",
+      link: "https://github.com/Abdullah-Qureshi583",
     },
 
     {
       id: "linkedin",
       name: "LinkedIn",
       icon: <FaLinkedin className="size-6" />,
-      link: "#",
+      link: "https://www.linkedin.com/in/abdullah-qureshi-4420272b7/",
     },
 
     {
@@ -107,23 +107,17 @@ const IconsSidebar = ({
 
   const bottomIcons = [
     {
-      id: "profile",
-      name: "Profile",
-      icon: <FaUser className="size-6" />,
-      link: "#",
-    },
-    {
       id: "setting",
       name: "Settings",
       icon: <FaCog className="size-6" />,
-      link: "#",
     },
   ];
 
   const renderIcons = (items: typeof icons) => (
     <div className="flex flex-col items-start gap-y-1 max-w-[100vh]  ">
       {items.map((item) => (
-        <Link key={item.id} href={item.link || "#"}>
+        <Link key={item.id} href={item.link || ""}>
+          {" "}
           <div
             className={`relative flex items-center justify-center w-14 h-14 rounded-r-sm transition duration-300 cursor-pointer
               ${

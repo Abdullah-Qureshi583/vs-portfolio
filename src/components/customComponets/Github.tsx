@@ -31,6 +31,8 @@ async function getGithubProfile(): Promise<UserProfile> {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`, // Use environment variable
     },
   });
+  console.log(process.env.NEXT_PUBLIC_GITHUB_TOKEN);
+  console.log(response);
   return response.json();
 }
 
@@ -69,17 +71,19 @@ export default function Github() {
   }, []);
 
   return (
-    <main className="min-h-screen md:px-4 py-4">
+    <main className=" max-w-7xl mx-auto md:px-4 py-4">
       {/* Banner Section */}
 
       <div className="bg-darkGray rounded-md shadow-md ">
         <div className=" mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center gap-6">
             {/* Profile Image */}
-            {loading || !profile ? (
+            {loading ? (
               <Skeleton className="rounded-full ">
                 <IoMdPerson className="w-32 h-32 rounded-full text-darkGray bg-lightGray p-3" />
               </Skeleton>
+            ) : !profile && !loading ? (
+              <IoMdPerson className="w-32 h-32 rounded-full text-darkGray bg-lightGray p-3" />
             ) : (
               <a
                 href={`https://github.com/${profile?.login}`}

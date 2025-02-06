@@ -18,6 +18,9 @@ import Resume from "./Resume";
 import Github from "./Github";
 
 import ThemeSwitcher from "./ThemeSwitcher";
+import { themes } from "@/lib/themes";
+import { ThemeName } from "@/types/theme";
+import { handleThemeChange } from "@/lib/handleThemeChange";
 const allFiles: fileType[] = [
   {
     name: "home.tsx",
@@ -50,6 +53,14 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
   const [files, setFiles] = useState(allFiles);
   const [activeFileName, setActiveFileName] = useState("home.tsx");
   const [isExplorerOpen, setIsExplorerOpen] = useState<boolean>(true);
+
+  // fetch theme from localStorage and set  it
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme") as ThemeName;
+    handleThemeChange(themes[storedTheme]);
+    //  themes[storedTheme] ? storedTheme : "Night Owl"; // Validate stored theme
+  }, []);
+
   const [openFiles, setOpenFiles] = useState<fileType[]>([
     {
       name: "home.tsx",

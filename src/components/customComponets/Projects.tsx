@@ -94,8 +94,8 @@ const techColors: { [key: string]: string } = {
 };
 
 export default function Projects() {
-  return (
-    <main className="min-h-screen py-4 md:p-8 md:px-4 text-activeColor">
+  return ( 
+    <main className=" max-w-7xl mx-auto py-4 md:p-8 md:px-4 text-activeColor">
       <div className="mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">My Projects</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

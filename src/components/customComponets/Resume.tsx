@@ -86,12 +86,12 @@ const skillsData: string[] = [
 
 const Resume: React.FC = () => {
   return (
-    <div className="mx-auto p-3 md:p-8 text-subTextColor rounded-md">
+    <div className="mx-auto max-w-7xl p-3 md:p-8 text-subTextColor rounded-md">
       {/* Header Section */}
       <header className="border-b border-lightGray pb-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
-            <h1 className="text-xl md:text-3xl font-serif md:underline decoration-lightGray">
+            <h1 className="text-xl text-activeColor md:text-3xl font-serif md:underline decoration-lightGray">
               ABDULLAH QURESHI
             </h1>
             <p className="text-subTextColor">Front-End Developer</p>

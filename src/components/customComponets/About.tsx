@@ -61,8 +61,8 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen  py-12 ">
-      <div className="max-w-4xl mx-auto">
+    <div className="  py-12 ">
+      <div className="max-w-6xl mx-auto">
         {/* top upper part about me and skills */}
         <div className="  mb-12">
           <div className="flex flex-col md:flex-row items-center mb-8">

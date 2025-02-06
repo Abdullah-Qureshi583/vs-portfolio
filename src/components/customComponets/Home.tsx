@@ -71,16 +71,16 @@ const Home = ({
   };
   return (
     <>
-      <section id="home" className="flex-grow flex relative  ">
+      <section id="home" className="flex-grow flex relative  max-w-7xl mx-auto">
         {/* Main content */}
         <div className="w-full  mx-auto pt-16 relative">
           <div className="flex flex-col gap-y-4  items-start">
             {/* Text content */}
             <div className="flex flex-col gap-y-4">
-              <h1 className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl tracking-wide  text-activeColor">
+              <h1 className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl tracking-wide font-sora text-activeColor">
                 Abdullah Qureshi
               </h1>
-              <span className="block mt-2  text-nowrap text-lg xs:text-xl md:text-4xl  font-SpaceGrotesk  tracking-widest text-subTextColor">
+              <span className="block mt-2  text-nowrap text-lg xs:text-xl md:text-4xl   tracking-widest text-subTextColor">
                 <Typewriter
                   options={{
                     strings: ["MERN Stack Developer"],
