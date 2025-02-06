@@ -67,7 +67,7 @@ const FilesHeader = ({
                 <div
                   className={` ${
                     activeFileName == file.name
-                      ? " border-b border-activeLineColor bg-activeTabColor  text-subTextColor"
+                      ? " border-b border-activeLineColor bg-activeTabColor  text-activeColor"
                       : "border border-darkGray bg-headerFileBgColor  border-b-0 text-lightGray"
                   } flex gap-2 group   cursor-pointer items-center px-4 py-1.5`}
                 >

@@ -128,7 +128,7 @@ const IconsSidebar = ({
             className={`relative flex items-center justify-center w-14 h-14 rounded-r-sm transition duration-300 cursor-pointer
               ${
                 activeId === item.id
-                  ? "bg-activeTabColor border-l-[3px] border-activeLineColor rounded-none rounded-r-sm text-subTextColor"
+                  ? "bg-activeTabColor border-l-[3px] border-activeLineColor rounded-none rounded-r-sm text-activeColor"
                   : "text-lightGray"
               }
               ${
