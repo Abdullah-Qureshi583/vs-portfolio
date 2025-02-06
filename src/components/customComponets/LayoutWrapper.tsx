@@ -151,7 +151,7 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
