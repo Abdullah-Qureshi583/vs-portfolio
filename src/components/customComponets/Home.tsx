@@ -124,17 +124,17 @@ const Home = ({
             <div className="flex flex-wrap gap-4">
               <Button
                 onClick={() => openProjects()}
-                className="bg-lightGray text-subTextColor hover:bg-darkGray group hover:text-secondaryColor px-6"
+                className="border-darkgray bg-activeColor border text-darkGray font-medium  hover:text-activeColor hover:bg-darkGray hover:border-lightGray group px-6"
               >
                 <span className="group-hover:underline duration-75 transition-all">
                   View Projects
                 </span>
-                <ExternalLink className="ml-1 h-4 w-4 group-hover:translate-x-1 group-hover:scale-105 group-hover:-translate-y-1" />
+                <ExternalLink className="ml-1 h-4 w-4 group-hover:translate-x-1 group-hover:scale-105 " />
               </Button>
 
               <Button
                 variant="outline"
-                className="border-lightGray bg-darkGray border text-activeColor font-medium  hover:text-darkGray hover:bg-activeColor hover:border-darkGray"
+                className="border-lightGray bg-darkGray border text-activeColor font-medium  hover:text-darkGray hover:bg-activeColor hover:border-darkGray px-4"
                 onClick={handleDownloadCV}
               >
                 Download Resume
