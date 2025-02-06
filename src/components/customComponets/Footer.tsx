@@ -22,10 +22,14 @@ const Footer = () => {
   return (
     <div className="bg-topHeaderBgColor w-full flex justify-between items-center px-2 py-0.5 text-xs ">
       <div className="">
-        <div className="flex gap-1 items-center text-subTextColor">
+        <a
+          href="https://github.com/Abdullah-Qureshi583/vs-portfolio"
+          target="_blank"
+          className="flex gap-1 items-center text-subTextColor"
+        >
           <FaCodeBranch className="text-subTextColor size-3" />
           <span>main*</span>
-        </div>
+        </a>
       </div>
       <div className="flex gap-4 items-center">
         {extensions.map((extension, index) => (
