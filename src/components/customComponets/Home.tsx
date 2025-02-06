@@ -71,9 +71,9 @@ const Home = ({
   };
   return (
     <>
-      <section id="home" className="flex-grow flex relative  max-w-7xl mx-auto">
+      <section id="home" className="flex-grow flex relative  max-w-7xl mx-auto ">
         {/* Main content */}
-        <div className="w-full  mx-auto pt-16 relative">
+        <div className="w-full  mx-auto py-12 relative">
           <div className="flex flex-col gap-y-4  items-start">
             {/* Text content */}
             <div className="flex flex-col gap-y-4">

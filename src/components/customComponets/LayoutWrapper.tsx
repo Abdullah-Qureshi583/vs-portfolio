@@ -21,6 +21,7 @@ import ThemeSwitcher from "./ThemeSwitcher";
 import { themes } from "@/lib/themes";
 import { ThemeName } from "@/types/theme";
 import { handleThemeChange } from "@/lib/handleThemeChange";
+import Footer from "./Footer";
 const allFiles: fileType[] = [
   {
     name: "home.tsx",
@@ -92,7 +93,7 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="overflow-hidden font-sora  flex flex-col min-h-screen max-h-screen bg-mainContentBgColor text-activeColor">
       <TopHeader />
-      <div className="flex flex-grow w-full h-full overflow-hidden">
+      <div className=" flex flex-grow w-full h-full overflow-hidden">
         <IconsSidebar
           isExplorerOpen={isExplorerOpen}
           setIsExplorerOpen={setIsExplorerOpen}
@@ -150,12 +151,9 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
 
 export default LayoutWrapper;
-
-{
-  /* {children} */
-}
