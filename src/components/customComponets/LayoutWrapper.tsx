@@ -57,9 +57,12 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
 
   // fetch theme from localStorage and set  it
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme") as ThemeName;
-    handleThemeChange(themes[storedTheme]);
-    //  themes[storedTheme] ? storedTheme : "Night Owl"; // Validate stored theme
+    if (typeof window !== "undefined") {
+      const storedTheme = localStorage.getItem("theme") as ThemeName;
+      if (storedTheme && themes[storedTheme]) {
+        handleThemeChange(themes[storedTheme]);
+      }
+    }
   }, []);
 
   const [openFiles, setOpenFiles] = useState<fileType[]>([
@@ -151,7 +154,7 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
