@@ -6,16 +6,16 @@ import { IoCheckmarkDone } from "react-icons/io5";
 import { FaCampground, FaCodeBranch } from "react-icons/fa";
 const extensions = [
   {
-    name: "Prittier",
-    icon: <IoCheckmarkDone className="text-subTextColor" />,
+    name: "pieces",
+    icon: <LiaPuzzlePieceSolid className="text-subTextColor" />,
   },
   {
     name: "tabnine",
     icon: <FaCampground className="text-subTextColor" />,
   },
   {
-    name: "pieces",
-    icon: <LiaPuzzlePieceSolid className="text-subTextColor" />,
+    name: "Prittier",
+    icon: <IoCheckmarkDone className="text-subTextColor" />,
   },
 ];
 const Footer = () => {
