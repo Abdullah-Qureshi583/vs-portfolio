@@ -34,7 +34,7 @@ type ThemeName =
   | "Solarized Light"
   | "Cobalt2"
   | "Github Light"
-  | "Solarized Dark"
+  | "Ayu Green Dark"
   | "Night Owl";
 
 // Define available themes
@@ -99,20 +99,20 @@ const themes: Record<ThemeName, ThemeColors> = {
     lightGray: "#656d76",
     darkGray: "#f2f2f2",
   },
-  "Solarized Dark": {
-    filesHeaderBgColor: "#002b36",
-    mainContentBgColor: "#161b22",
-    topHeaderBgColor: "#161b22",
-    iconsSidebarBgColor: "#161b22",
-    headerFileBgColor: "#002b36",
-    explorerSidebarBgColor: "#0d1117",
-    activeLineColor: "#d73a49",
-    activeTabColor: "#1f2428",
-    activeColor: "#e6edf3",
-    subTextColor: "#c9d1d9",
-    secondaryColor: "#268bd2",
-    lightGray: "#839496",
-    darkGray: "#073642",
+  "Ayu Green Dark": {
+    filesHeaderBgColor: "#0b0e14",
+    mainContentBgColor: "#0b0e14",
+    topHeaderBgColor: "#0b0e14",
+    iconsSidebarBgColor: "#0b0e14",
+    headerFileBgColor: "#0b0e14",
+    explorerSidebarBgColor: "#0b0e14",
+    activeLineColor: "#19966f",
+    activeTabColor: "#171b24",
+    activeColor: "#dbe8e1",
+    subTextColor: "#b3b19f",
+    secondaryColor: "#e7ceae",
+    lightGray: "#6b7d8b",
+    darkGray: "#171a20",
   },
   "Night Owl": {
     filesHeaderBgColor: "#011627",
