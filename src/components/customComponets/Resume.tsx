@@ -65,7 +65,7 @@ const projectsData: ProjectItem[] = [
     title: "E-COMMERCE WEBSITE",
     link: "https://deku-marketplace-builder.vercel.app",
     description:
-      "A fully functional e-commerce platform built with Next.js and Sanity, featuring a admin dashboard. Key functionalities include product filtering, add-to-cart, checkout, and Stripe payment integration. Ensured a seamless user experience with a responsive UI using Tailwind CSS and deployed on Vercel.",
+      "A fully functional e-commerce platform built with Next.js and Sanity. Key functionalities include product filtering, add-to-cart, checkout, and Stripe payment integration. Ensured a seamless user experience with a responsive UI using Tailwind CSS and deployed on Vercel.",
   },
   {
     title: "URL SHORTENER (MERN STACK)",

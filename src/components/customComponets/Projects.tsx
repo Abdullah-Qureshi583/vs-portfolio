@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { PiGithubLogo } from "react-icons/pi";
 import { ExternalLink } from "lucide-react";
+import { Metadata } from "next";
 
 const projects = [
   {
     name: "E-commerce Website",
     description:
-      "A fully functional e-commerce platform featuring Admin dashboard, product filtering, add-to-cart, checkout, and Stripe payment integration, built with Next.js and Sanity.",
+      "A fully functional e-commerce platform featuring product filtering, add-to-cart, checkout, and Stripe payment integration, built with Next.js and Sanity.",
     languages: ["Next.js", "Sanity", "Tailwind CSS", "Stripe", "TypeScript"],
     liveDemo: "https://hekto-marketplace-builder.vercel.app/",
     github:
